@@ -20,9 +20,29 @@ Route::get('/profile', function () {
     return view('user.profile');
 });
 
+Route::get('/product', function () {
+    return view('products.form');
+});
+
+//Route::get('product/index', function () {
+//    return view('products.index');
+//});
+
 
 Route::get('register/create', 'RegistrationController@create');
 Route::post('store', 'RegistrationController@store');
+
+//Route::post('product/store', array('uses'=>'ProductController@create'));
+//Route::get('product/index','ProductController@index');
+
+//Route::resource('products','ProductController');
+
+Route::resource('pros','ProController');
+
+//Route::get('product/display',function (){
+//    $products = DB::table('products')->get();
+//    return view('product/display',['product'=>$products]);
+//});
 //
 //Route::get('/login', 'SessionController@create');
 //Route::post('/login/store','SessionController@store');
